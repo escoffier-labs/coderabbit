@@ -1,0 +1,37 @@
+# yaml-language-server: $schema=https://coderabbit.ai/integrations/schema.v2.json
+reviews:
+  profile: chill
+  request_changes_workflow: true
+  review_status: true
+  auto_review:
+    enabled: false
+    drafts: false
+    labels:
+      - coderabbit-review
+    auto_incremental_review: false
+    auto_pause_after_reviewed_commits: 1
+    ignore_title_keywords:
+      - "[skip review]"
+      - "docs:"
+      - "docs("
+      - "chore(docs)"
+    ignore_usernames:
+      - "dependabot[bot]"
+      - "renovate[bot]"
+      - "github-actions[bot]"
+  path_filters:
+    - "!**/README*"
+    - "!**/CHANGELOG*"
+    - "!**/LICENSE*"
+    - "!docs/**"
+    - "!**/docs/**"
+    - "!**/.claude/memory-handoffs/**"
+    - "!**/*.snap"
+    - "!**/generated/**"
+    - "!**/__generated__/**"
+  tools:
+    github-checks:
+      enabled: true
+      timeout_ms: 900000
+chat:
+  auto_reply: false
